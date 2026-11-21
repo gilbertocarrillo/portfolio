@@ -207,9 +207,22 @@ u { text-decoration: underline; text-decoration-color: var(--blue); text-decorat
   .js .hero-silk.is-ready { opacity: 1; }
 }
 .hero__photo {
-  position: absolute; z-index: 2; left: 0; right: 0; bottom: 0; margin-inline: auto;
-  height: 88%; width: auto; max-width: 100%; object-fit: contain; object-position: bottom;
+  position: absolute; z-index: 2; inset: 0;
+  width: 100%; height: 100%; object-fit: cover; object-position: center bottom;
 }
+.hero__panel::before,
+.hero__panel::after { content: ""; position: absolute; z-index: 3; left: 0; right: 0; pointer-events: none; }
+/* top: soft dark fade so name + role read over the photo */
+.hero__panel::before {
+  top: 0; height: 30%;
+  background: linear-gradient(to bottom, rgba(8, 14, 40, 0.55), rgba(8, 14, 40, 0.2) 60%, transparent);
+}
+/* bottom: navy scrim so the facts read over the jacket */
+.hero__panel::after {
+  bottom: 0; height: 32%;
+  background: linear-gradient(to top, rgba(8, 14, 40, 0.72), rgba(8, 14, 40, 0.35) 55%, transparent);
+}
+.hero__panel .hero__id { z-index: 4; }
 .hero__ph { position: absolute; inset: 0; z-index: 2; display: none; }
 .hero__panel.is-fallback .hero__photo { visibility: hidden; }
 .hero__panel.is-fallback .hero__ph { display: block; }
@@ -252,8 +265,9 @@ u { text-decoration: underline; text-decoration-color: var(--blue); text-decorat
 }
 .hero__id .hero__name { font-size: clamp(2rem, 3.2vw, 3rem); color: #fff; letter-spacing: -0.035em; }
 .hero__id .hero__role { margin-top: 10px; font-size: clamp(1.1rem, 1.5vw, 1.35rem); font-weight: 500; color: #fff; }
-.hero__id .hero__focus { margin-top: 4px; font-size: 1rem; color: rgba(255, 255, 255, 0.9); }
-.hero__id .hero__meta { margin-top: 10px; font-size: 1rem; color: rgba(255, 255, 255, 0.82); }
+.hero__id--foot { top: auto; bottom: clamp(28px, 4vw, 48px); }
+.hero__id .hero__focus { font-size: 1.0625rem; font-weight: 500; color: #fff; }
+.hero__id .hero__meta { margin-top: 6px; font-size: 1rem; color: rgba(255, 255, 255, 0.82); }
 .hero__id .text-link { color: #fff; text-decoration-color: rgba(255, 255, 255, 0.6); }
 .hero__id .text-link:hover { color: #fff; text-decoration-color: #fff; }
 
