@@ -1,0 +1,8 @@
+{
+  // Static-assets-only Worker: serves the site files from the repo root.
+  "name": "gilbertocarrillo",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./"
+  }
+}

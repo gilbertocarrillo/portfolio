@@ -1,0 +1,15 @@
+# Files in the repo root that must not be published as site assets
+wrangler.jsonc
+.gitignore
+/_worker.js
+/_routes.json
+/functions
+node_modules
+.git
+.DS_Store
+.npmrc
+.claude
+.codegraph
+.atl
+archive
+odd
