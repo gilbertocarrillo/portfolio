@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Share card</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=block" rel="stylesheet">
+<style>
+  /* 1200x630 Open Graph card, rendered to assets/og.jpg by tools/build-images.sh */
+  * { margin: 0; box-sizing: border-box; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; background: #07080C; }
+  body { font-family: "Inter Tight", system-ui, sans-serif; color: #F4F5F7; position: relative; }
+  .photo {
+    position: absolute; top: 0; right: 0; width: 600px; height: 630px;
+    object-fit: cover; object-position: 50% 20%;
+  }
+  /* blend the photo's left edge into the dark side */
+  .fade {
+    position: absolute; top: 0; right: 0; width: 600px; height: 630px;
+    background: linear-gradient(to right, #07080C 0%, rgba(7, 8, 12, 0.55) 18%, rgba(7, 8, 12, 0) 42%);
+  }
+  .text { position: absolute; left: 72px; top: 0; bottom: 0; width: 620px; display: flex; flex-direction: column; justify-content: center; }
+  .name { font-size: 76px; font-weight: 700; letter-spacing: -0.04em; line-height: 1; }
+  .role { margin-top: 22px; font-size: 36px; font-weight: 600; letter-spacing: -0.02em; color: #5B8CFF; }
+  .focus { margin-top: 18px; font-size: 26px; font-weight: 500; color: #A0A6B4; }
+  .site { position: absolute; left: 72px; bottom: 56px; display: flex; align-items: center; gap: 12px; font-size: 24px; font-weight: 600; color: #F4F5F7; }
+  .site i { width: 12px; height: 12px; border-radius: 50%; background: #2F5FE0; }
+</style>
+</head>
+<body>
+  <img class="photo" src="../assets/photo-1254.webp" alt="">
+  <div class="fade"></div>
+  <div class="text">
+    <p class="name">Gilberto Carrillo</p>
+    <p class="role">AI Engineer &amp; Team Lead</p>
+    <p class="focus">Agentic AI · LLM Platforms · Python Backend</p>
+  </div>
+  <p class="site"><i></i>gilbertocarrillo.com</p>
+</body>
+</html>
