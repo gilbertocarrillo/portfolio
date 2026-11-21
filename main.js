@@ -365,12 +365,19 @@ function initSilk(canvas, cfg) {
     canvas.classList.add("is-ready");
   }
 
+  // Coalesce every re-measure request (init, resize, fonts, intro settle) into one per frame:
+  // each render() re-reads layout and may rebuild ~50k particles, so duplicates are long tasks.
+  let pending = 0;
+  function schedule() {
+    if (!pending) pending = requestAnimationFrame(() => { pending = 0; render(); });
+  }
+
   silkRedraws.push(render);
-  render();
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => render());
-  setTimeout(() => render(), 1500); // after the intro animation settles
-  if ("ResizeObserver" in window) new ResizeObserver(() => render()).observe(canvas);
-  else window.addEventListener("resize", () => render());
+  schedule();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(schedule);
+  setTimeout(schedule, 1500); // after the intro animation settles
+  if ("ResizeObserver" in window) new ResizeObserver(schedule).observe(canvas);
+  else window.addEventListener("resize", schedule);
 
   if (!reduced) {
     if ("IntersectionObserver" in window) {
@@ -388,7 +395,31 @@ function initSilk(canvas, cfg) {
   }
 }
 
+/* Run fn once the browser is idle (after first paint), so heavy canvas setup stays off the
+   critical path. The timeout caps the wait on busy pages. */
+function whenIdle(fn, timeout) {
+  if ("requestIdleCallback" in window) requestIdleCallback(fn, { timeout: timeout });
+  else setTimeout(fn, 200);
+}
+
+/* Run fn the first time el comes within `margin` of the viewport. */
+function whenNear(el, margin, fn) {
+  if (!("IntersectionObserver" in window)) { fn(); return; }
+  const io = new IntersectionObserver((entries) => {
+    if (entries.some((e) => e.isIntersecting)) { io.disconnect(); fn(); }
+  }, { rootMargin: margin });
+  io.observe(el);
+}
+
 function initSilks() {
+  whenIdle(initHeroSilk, 1200);
+
+  // Contact sits at the bottom of the page: build its ribbon only when the reader gets close.
+  const ctCanvas = document.querySelector(".contact-silk");
+  if (ctCanvas) whenNear(ctCanvas, "400px 0px", initContactSilk);
+}
+
+function initHeroSilk() {
   const heroCanvas = document.querySelector(".hero-silk");
   initSilk(heroCanvas, {
     scope: heroCanvas && heroCanvas.closest(".hero"),
@@ -400,8 +431,10 @@ function initSilks() {
       if (mini && mini.offsetParent !== null) add(mini.getBoundingClientRect(), 0.3);
     },
   });
+}
 
-  // Contact: a calmer ribbon centred on the heading, dimmed under every line of text
+// Contact: a calmer ribbon centred on the heading, dimmed under every line of text
+function initContactSilk() {
   const ctCanvas = document.querySelector(".contact-silk");
   const ctTitle = document.querySelector(".contact__title");
   if (!ctCanvas || !ctTitle) return;
