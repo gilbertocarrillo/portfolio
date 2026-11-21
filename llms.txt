@@ -1,0 +1,57 @@
+# Gilberto Carrillo
+
+> AI Engineer & Team Lead with 3 years building production LLM platforms, workflow engines and agents in Python, FastAPI and Azure. Based in Venezuela, open to remote AI engineering roles building agentic products and LLM platforms.
+
+I build the backend behind agentic products: the infrastructure that turns "wire an LLM into a feature" into something reliable enough for real clients.
+
+## Contact
+
+- Website: https://gilbertocarrillo.com/
+- Email: gilbertojosecarrilloparra@gmail.com
+- LinkedIn: https://www.linkedin.com/in/gilberto-carrillo
+- GitHub: https://github.com/gilbertocarrillo
+- CV (PDF): https://gilbertocarrillo.com/assets/Gilberto_Carrillo_CV.pdf
+
+## Profile
+
+- Role: AI Engineer & Team Lead
+- Focus: Agentic AI, LLM platforms, Python backend
+- Based in: Venezuela, working remotely
+- Languages: Spanish (native), English (professional working proficiency)
+- Education: B.Sc. Systems Engineering, Universidad de los Andes
+- Certifications: Neural Networks and Deep Learning (DeepLearning.AI); Machine Learning Specialization (DeepLearning.AI & Stanford Online)
+
+## Experience
+
+### MAIDEPOT — Remote, South Korea-based platform for AI workflows and agents (Jul 2023 – Aug 2026)
+
+**Backend Engineer & Team Lead — AI Platform (Jan 2024 – Aug 2026)**
+
+- Promoted to Team Lead within six months; led a cross-functional engineering team (frontend, full-stack and QA) while remaining the main backend contributor and owning architecture decisions.
+- Built a model-agnostic LLM layer across 7 providers (OpenAI, Azure OpenAI, Anthropic, Gemini, DeepSeek, GLM, LG EXAONE), with retries, rate-limit failover and load balancing, and the multi-model chat on top of it.
+- Re-architected the workflow engine into a JSON-defined DAG with parallel execution, LLM-evaluated branches and map-reduce loops; KOTRA and The Korea Times built their own workflows on it.
+- Delivered translation of documents up to 1,000 pages and transcription of long audio and video, two of the platform's most-used features.
+- Extended the platform to PydanticAI agents with ~40 native tools, workflows as tools and scheduled routines; delivered client agents such as a sales-training assistant for LG and Spanish tutors for Korean language academies.
+- Built RAG knowledge bases (pgvector, Cohere rerank) and a vector-free LLM wiki engine.
+- Owned the core FastAPI backend: SSE streaming, business-level multi-tenancy, Redis locks and rate limiting.
+- Built the public API (hashed API tokens, rate limits per operation), usage-based billing priced per model and token type, the document drive and the enterprise dashboard.
+- Managed releases on Azure App Service across dev, staging and production with zero-downtime slot swaps; ran heavy workloads on Azure Functions with Storage Queues.
+
+**Backend Engineer (Jul 2023 – Dec 2023)**
+
+- Migrated the platform's core backend, including its original text and image generation apps, from Google Cloud Functions to a dedicated FastAPI service, eliminating cold starts and consolidating the logic into a single, maintainable API.
+
+## Research
+
+- **Reinforcement Learning for Estimating Student Proficiency in Math Word Problems** — Perez, J., Dapena, E., Aguilar, J., & Carrillo, G. 2022 XVII Latin American Conference on Learning Technologies (LACLO), IEEE Xplore. https://doi.org/10.1109/LACLO56648.2022.10013399
+- **Design of Human-Robot Interaction for Learning Multiplication Tables and Implementation of Speech Recognition Models** — B.Sc. thesis, Universidad de los Andes, 2022. 2nd place, VII National Contest of Special Degree Projects, Venezuelan Computing Society. https://doi.org/10.13140/RG.2.2.27502.95042
+
+## Skills
+
+- Agents: PydanticAI, MCP, workflow orchestration, tool use / function calling
+- Models & retrieval: multi-provider LLM orchestration, RAG, pgvector, embeddings & reranking, prompt engineering, context management, Azure Document Intelligence, AssemblyAI
+- Backend: Python, FastAPI, PostgreSQL, Redis, Elasticsearch
+- Cloud & infra: Azure (App Service, Functions, OpenAI), Firebase, Docker, Git/GitHub
+- Interface: Next.js, React, JavaScript, Redux, Vercel
+- How I work: system design, software architecture, technical leadership, cross-functional collaboration
+- AI-assisted development: Claude Code, Codex, OpenCode

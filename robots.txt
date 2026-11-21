@@ -1,0 +1,9 @@
+# gilbertocarrillo.com
+# Search engines and AI assistants are welcome to read, index and cite this site.
+# Content signals (https://contentsignals.org): search and AI answers yes, model training no.
+
+User-agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=no
+Allow: /
+
+Sitemap: https://gilbertocarrillo.com/sitemap.xml
