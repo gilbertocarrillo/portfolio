@@ -4,6 +4,7 @@ wrangler.jsonc
 /_worker.js
 /_routes.json
 /functions
+.wrangler
 node_modules
 .git
 .DS_Store
