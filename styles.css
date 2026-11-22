@@ -1288,6 +1288,7 @@ u { text-decoration: underline; text-decoration-color: var(--blue); text-decorat
 .pub__btn { margin-top: auto; }
 .pub__cite + .pub__award { margin-top: 18px; }
 .pub__body > .pub__btn { margin-top: 22px; align-self: end; }
+.pub__btns { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; align-self: end; }
 .pub__cite, .pub__award { justify-self: stretch; }
 .pub__award { align-self: stretch; align-items: center; }
 .pub__cert { white-space: nowrap; font-weight: 600; }

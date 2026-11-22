@@ -44,7 +44,7 @@ I build the backend behind agentic products: the infrastructure that turns "wire
 ## Research
 
 - **Reinforcement Learning for Estimating Student Proficiency in Math Word Problems** — Perez, J., Dapena, E., Aguilar, J., & Carrillo, G. 2022 XVII Latin American Conference on Learning Technologies (LACLO), IEEE Xplore. https://doi.org/10.1109/LACLO56648.2022.10013399
-- **Design of Human-Robot Interaction for Learning Multiplication Tables and Implementation of Speech Recognition Models** — B.Sc. thesis, Universidad de los Andes, 2022. 2nd place, VII National Contest of Special Degree Projects, Venezuelan Computing Society. https://doi.org/10.13140/RG.2.2.27502.95042
+- **Design of Human-Robot Interaction for Learning Multiplication Tables and Implementation of Speech Recognition Models** — B.Sc. thesis, Universidad de los Andes, 2022. 2nd place, VII National Contest of Special Degree Projects, Venezuelan Computing Society. https://doi.org/10.13140/RG.2.2.27502.95042 Dataset (LaSDAICVI, 29,061 children's Spanish voice commands): https://github.com/gilbertocarrillo/LaSDAICVI · https://doi.org/10.5281/zenodo.24430509
 
 ## Skills
 
